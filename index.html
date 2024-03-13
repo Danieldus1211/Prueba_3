@@ -1,0 +1,67 @@
+<!--indica que el código es HTML y que es en español-->
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <!--utf-8 es una codificación de caracteres, se agrega el titulo-->
+    <!--y se vincula un archivo CSS que es el del estilo y colores-->
+    <meta charset="utf-8">
+    <title>Juego App</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body style style="background-color: lightblue;">
+
+      <div class="main-container">
+
+        <!--h1 es un encabezado de nivel 1, id se utiliza para-->
+        <!--identificar y seleccionar un elemento para luego ser usado-->
+        <h1 class="titulo">Ahorcado Electrónico</h1>
+        <h1 id="msg-final"></h1>
+
+        <!--h3 es de menor jerarquía se usa para subtitulos-->
+        <h3 id="acierto"></h3>
+
+        <!--La clase flex-row sugiere que los elementos hijos se colocarán en una fila-->
+        <!--no-wrap indica que no se permitirá que los elementos hijos se envuelvan a una-->
+        <!--nueva línea si no hay suficiente espacio horizontal-->
+        <div class="flex-row no-wrap">
+
+          <!--la clase palabra actúa como un selector de estilo en CSS-->
+          <h2 class="palabra" id="palabra"></h2>
+
+          <!--src especifica la ruta de la imagen a mostrar, el id puede-->
+          <!--ser utilizado en JavaScript-->
+          <picture>
+            <img src="img/ahorcado_6.png" alt="" id="image6">
+            <img src="img/ahorcado_5.png" alt="" id="image5">
+            <img src="img/ahorcado_4.png" alt="" id="image4">
+            <img src="img/ahorcado_3.png" alt="" id="image3">
+            <img src="img/ahorcado_2.png" alt="" id="image2">
+            <img src="img/ahorcado_1.png" alt="" id="image1">
+            <img src="img/ahorcado_0.png" alt="" id="image0">
+          </picture>
+        </div>
+        <div class="flex-row" id="turnos">
+          <div class="col">
+            <!--modifica dentro de una linea de texto-->
+            <h3>Intentos restantes: <span id="intentos">6</span></h3>
+          </div>
+          <div class="col">
+            <button onclick="inicio()" id="reset">Elegir otra palabra</button>
+            <button onclick="pista()" id="pista">Dame una pista!</button>
+            <span id="hueco-pista"></span>
+          </div>
+          </div>
+        
+        <div class="flex-row">
+          <div class="col">
+            <div class="flex-row" id="abcdario">
+            </div>
+          </div>
+          <div class="col"></div>
+        </div>
+
+      </div>
+    <script src="index.js"></script>
+  </body>
+</html>
